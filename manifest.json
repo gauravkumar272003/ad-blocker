@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Ad Spoofer (Advanced)",
+    "version": "1.0",
+    "description": "Skips YouTube video ads.",
+    "permissions": [
+      "scripting",
+      "webRequest",
+      "webRequestBlocking",
+      "declarativeNetRequest",
+      "tabs"
+    ],
+    "host_permissions": [
+      "*://www.youtube.com/*",
+      "*://youtube.com/*",
+      "*://googleads.g.doubleclick.net/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.youtube.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "action": {
+      "default_title": "YT Ad Spoofer"
+    }
+  }
+  
