@@ -2,7 +2,6 @@ chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
     const url = new URL(details.url);
 
-    // Intercept ad ping requests and spoof them
     if (url.hostname.includes('youtube.com') && url.pathname.includes('/api/stats/ads')) {
       console.log("Intercepted ad tracking ping:", url.href);
 
