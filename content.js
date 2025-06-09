@@ -1,4 +1,3 @@
-// Hook into global player response before YouTube uses it
 const script = document.createElement('script');
 script.textContent = `
   Object.defineProperty(window, 'ytInitialPlayerResponse', {
